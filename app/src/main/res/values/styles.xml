@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -19,6 +19,7 @@
     </style>
 
     <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/status_bar_color</item>
         <item name="colorPrimary">@color/appsColor</item>
         <item name="colorPrimaryDark">@color/appsColor</item>
         <item name="colorAccent">@color/colorAccent</item>

@@ -1,6 +1,7 @@
 package com.tourist.police.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -12,17 +13,26 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.TextView;
 
 import com.tourist.police.R;
 import com.tourist.police.interfaces.FragmentChanger;
 import com.tourist.police.view.fragment.HomeFragment;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements FragmentChanger {
 
     public static final String EXTRA_REVEAL_X = "EXTRA_REVEAL_X";
     public static final String EXTRA_REVEAL_Y = "EXTRA_REVEAL_Y";
+
+    @Bind(R.id.toolbar_main)
+    Toolbar toolbar;
+
+    @Bind(R.id.tv_language)
+    TextView tvLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +42,15 @@ public class MainActivity extends AppCompatActivity implements FragmentChanger {
         /*if (savedInstanceState == null) {
             revealAnimation();
         }*/
+
+        setSupportActionBar(toolbar);
+        tvLanguage.setText("English");
+
         loadFragment(HomeFragment.getInstance());
     }
 
     private void revealAnimation() {
-        final View mainLayout = findViewById(R.id.main_layout);
+        final View mainLayout = findViewById(R.id.fl_fragment);
         final Intent intent = getIntent();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && intent.hasExtra(EXTRA_REVEAL_X) && intent.hasExtra(EXTRA_REVEAL_Y)) {
             mainLayout.setVisibility(View.INVISIBLE);
@@ -70,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChanger {
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.main_layout, fragment);
+        transaction.replace(R.id.fl_fragment, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -78,9 +92,18 @@ public class MainActivity extends AppCompatActivity implements FragmentChanger {
     @Override
     public void onChangeFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.main_layout, fragment);
+        transaction.replace(R.id.fl_fragment, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @OnClick(R.id.tv_language)
+    void languageChanger() {
+        if (tvLanguage.getText().toString().equalsIgnoreCase("English")) {
+            tvLanguage.setText("বাংলা");
+        } else {
+            tvLanguage.setText("English");
+        }
     }
 
     @Override
