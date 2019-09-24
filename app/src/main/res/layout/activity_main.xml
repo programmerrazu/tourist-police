@@ -31,9 +31,9 @@
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_centerVertical="true"
-                        app:srcCompat="@drawable/toolbar_icon" />
+                        app:srcCompat="@drawable/logo" />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_app_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size" />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_language"
                         android:layout_width="@dimen/_70sdp"
                         android:layout_height="wrap_content"

@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.fragment.RulesFragment">
 
-    <TextView
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Hello Rules" />
+        android:layout_below="@+id/header"
+        android:background="@drawable/apps_bg"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_border"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text="National Tourism Policy 2010"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_border"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text="Bangladesh Travel Agencis"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_border"
+                android:padding="@dimen/_10sdp"
+                android:text="Recently Tourist Police has started its Operational Zone at Kustia, Rangpur, Sathkhira , Comilla and sub-zone at Naogaon. Recently Tourist Police has started its Operational Zone at Kustia, Rangpur, Sathkhira , Comilla and sub-zone at Naogaon. Recently Tourist Police has started its Operational Zone at Kustia, Rangpur, Sathkhira , Comilla and sub-zone at Naogaon."
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size2" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

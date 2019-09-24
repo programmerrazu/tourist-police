@@ -12,7 +12,7 @@
         android:layout_height="@dimen/_50sdp"
         android:layout_centerHorizontal="true" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_home_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

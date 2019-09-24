@@ -1,6 +1,7 @@
 package com.tourist.police.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChanger {
     Toolbar toolbar;
 
     @Bind(R.id.tv_language)
-    TextView tvLanguage;
+    AppCompatTextView acTvLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChanger {
         }*/
 
         setSupportActionBar(toolbar);
-        tvLanguage.setText("English");
+        acTvLanguage.setText("বাংলা");
 
         loadFragment(HomeFragment.getInstance());
     }
@@ -99,10 +100,10 @@ public class MainActivity extends AppCompatActivity implements FragmentChanger {
 
     @OnClick(R.id.tv_language)
     void languageChanger() {
-        if (tvLanguage.getText().toString().equalsIgnoreCase("English")) {
-            tvLanguage.setText("বাংলা");
+        if (acTvLanguage.getText().toString().equalsIgnoreCase("English")) {
+            acTvLanguage.setText("বাংলা");
         } else {
-            tvLanguage.setText("English");
+            acTvLanguage.setText("English");
         }
     }
 

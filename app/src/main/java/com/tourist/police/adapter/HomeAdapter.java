@@ -8,10 +8,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 import com.tourist.police.R;
 import com.tourist.police.listeners.OnItemClickListener;
 import com.tourist.police.model.HomeInfo;
@@ -44,15 +44,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeHolder> {
     @Override
     public void onBindViewHolder(@NonNull HomeHolder holder, int position) {
         HomeInfo home = homeInfoList.get(position);
-        holder.tvHomeName.setText(home.getName());
+        holder.acTvHomeName.setText(home.getName());
 
-        Glide.with(context)
-                .load(home.getImage())
-                .apply(new RequestOptions()
-                        .centerCrop()
-                        .circleCrop()
-                        .fitCenter())
-                .into(holder.ivHomeImage);
+        Picasso.get().load(home.getImage()).into(holder.acIvHomeImage);
     }
 
     @Override
@@ -63,10 +57,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeHolder> {
     class HomeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @Bind(R.id.iv_home_image)
-        AppCompatImageView ivHomeImage;
+        AppCompatImageView acIvHomeImage;
 
         @Bind(R.id.tv_home_name)
-        TextView tvHomeName;
+        AppCompatTextView acTvHomeName;
 
         HomeHolder(@NonNull View itemView) {
             super(itemView);

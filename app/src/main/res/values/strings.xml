@@ -1,5 +1,24 @@
 <resources>
+
     <string name="app_name">Tourist Police</string>
     <string name="snack_bar">Dismiss</string>
     <string name="toolbar_title">Tourist Police App</string>
+    <string name="txt_complain">Complain/Query</string>
+    <string name="txt_notice">Notice/News</string>
+    <string name="txt_spot">Tourist Spot &amp; Tour Guide</string>
+    <string name="txt_about">About Tourist Police</string>
+    <string name="txt_faq">Frequently Asked Questions (FAQ)</string>
+    <string name="txt_contact">Contact</string>
+    <string name="txt_find_us">Find us</string>
+    <string name="txt_rules">Laws &amp; Rules</string>
+    <string name="txt_forms">Forms</string>
+    <string name="txt_hot_line">Hotline</string>
+    <string name="txt_social_network">Social Network</string>
+    <string name="txt_live_chat">Live Chat</string>
+    <string name="txt_camera">ছবি</string>
+    <string name="txt_video">ভিডিও</string>
+    <string name="txt_audio">অডিও</string>
+    <string name="txt_file">ফাইল</string>
+    <string name="txt_submit">Submit</string>
+
 </resources>
